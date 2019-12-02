@@ -1,0 +1,13 @@
+version: '2.4'
+
+services:
+
+  dns:
+    build:
+      context: .
+      target: ${PATCH:-not-patched}
+    container_name: dns
+    tty: true
+    ports:
+      - "53:53"
+      - "53:53/udp"
